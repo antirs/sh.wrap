@@ -1,0 +1,22 @@
+name: Build project documentation
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.ref }}-site
+  cancel-in-progress: true
+
+on:
+  pull_request:
+  push:
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  build-docs:
+    uses: antirs/sh.wrap/.github/workflows/actions.yml@actions
+    with:
+      GH_PAGES_REPO: 'https://github.com/antirs/sh.wrap'
+      GH_PAGES_BRANCH: 'gh-pages-project'

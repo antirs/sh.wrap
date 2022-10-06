@@ -1,0 +1,22 @@
+baseURL = 'https://antirs.github.io/project/'
+languageCode = 'en-us'
+title = 'sh.wrap project online documentation'
+
+disableHugoGeneratorInject = true
+disableKinds = ["RSS"]
+enableRobotsTXT = true
+
+paginate = 10
+pluralizeListTitles = false
+enableInlineShortcodes = true
+
+[markup]
+defaultMarkdownHandler = 'goldmark'
+[markup.goldmark]
+[markup.goldmark.parser]
+autoHeadingID = true
+autoHeadingIDType = 'github'
+[markup.tableOfContents]
+endLevel = 2
+ordered = false
+startLevel = 1
