@@ -31,7 +31,7 @@ jobs:
       site_dir: "./doc"
       public_dir: "./public"
       public_cache: "doc-${{ github.run_id }}"
-      gh_pages_repo: "https://github.com/ekotik/sh.wrap"
+      gh_pages_repo: "https://github.com/antirs/sh.wrap"
       gh_pages_branch: "gh-pages/sh.wrap"
   update-submodules:
     permissions:
@@ -41,6 +41,6 @@ jobs:
     uses: antirs/sh.wrap/.github/workflows/update-submodules.yml@actions
     with:
       run_id: "doc/update-submodules"
-      git_repo: "https://github.com/ekotik/sh.wrap"
+      git_repo: "https://github.com/antirs/sh.wrap"
       git_branch: "gh-pages/sh.wrap"
       git_repo_dir: "./sh.wrap"
