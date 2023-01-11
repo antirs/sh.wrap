@@ -16,7 +16,7 @@ env:
   DOCKERFILE: "git-tasks.Dockerfile"
   WORK_DIR: "/github/workspace/_actions"
   SCRIPT: "./test/workflow/test-workflows.sh"
-  GITHUB_REPO: "ekotik/sh.wrap"
+  GITHUB_REPO: "antirs/sh.wrap"
 
 jobs:
   test-workflows:
@@ -29,7 +29,7 @@ jobs:
         with:
           submodules: recursive
       - name: "Checkout actions"
-        uses: ekotik/sh.wrap@actions
+        uses: antirs/sh.wrap@actions
       - uses: ./_actions/.github/actions/prepare-dockerfile
       - uses: ./_actions/.github/actions/test-workflows
         with:
@@ -37,6 +37,6 @@ jobs:
           script: "${{ env.SCRIPT }}"
           github_repo: "${{ env.GITHUB_REPO }}"
           data_dirs: |
-            ./test/workflow/data/actions
+            ./test/workflow/data/generate-docs
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
